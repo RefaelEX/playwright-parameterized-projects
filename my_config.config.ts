@@ -21,13 +21,25 @@ export default defineConfig<TestOptions>({
         {
           name: 'setup_bob',
           testDir: './testSetup',
-          use: { person: 'bob' }
+          use: { person: 'bob' },
+          teardown: 'teardown_bob'
         },
     
         {
           name: 'setup_alice',
           testDir: './testSetup',
-          use: { person: 'alice' }
+          use: { person: 'alice' },
+          teardown: 'teardown_alice'
         },
+        {
+          name: 'teardown_bob',
+          testDir: './teardown',
+          use: { person: 'bob' }
+        },
+        {
+          name: 'teardown_alice',
+          testDir: './teardown',
+          use: { person: 'alice' }
+        }
       ],
 })
