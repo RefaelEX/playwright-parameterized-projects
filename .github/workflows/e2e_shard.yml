@@ -15,6 +15,7 @@ jobs:
         shard: [1/2, 2/2]
     steps:
     - uses: actions/checkout@v3
+
     - uses: actions/setup-node@v3
       with:
         node-version: 22
@@ -58,9 +59,9 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
-        node-version: 18
+        node-version: 22
     - name: Install dependencies
-      run: npm ci
+      run: yarn install
 
     # we now download the reports uploaded previously to merge them and create one single html report
     - name: Download blob reports from GitHub Actions Artifacts
