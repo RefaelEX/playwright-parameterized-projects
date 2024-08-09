@@ -1,12 +1,6 @@
 name: Playwright Tests
 on:
   workflow_dispatch:
-  
-# Give the workflow permission to deploy the Pages site
-permissions:
-  contents: read
-  pages: write
-  id-token: write
 
 jobs:
   test:
@@ -41,7 +35,7 @@ jobs:
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./playwight-report
+        publish_dir: ./playwright-report
         destination_dir: last-report
 
     - name: Write URL in summary 
