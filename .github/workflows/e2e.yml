@@ -44,5 +44,6 @@ jobs:
         publish_dir: ./playwight-report
         destination_dir: last-report
 
-      
+    - name: Write URL in summary 
+      run: echo "### Test results (link available after 20 secs) - https://${{ github.repository_owner }}.github.io/playwright-parameterized-projects/last-report/" >> $GITHUB_STEP_SUMMARY
   
