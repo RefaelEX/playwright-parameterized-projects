@@ -1,4 +1,4 @@
-name: Delete old folders from github pages
+name: Clean github pages
 
 on:
   workflow_dispatch:
