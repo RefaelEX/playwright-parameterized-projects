@@ -28,6 +28,9 @@ jobs:
         with:
             node-version: 22
 
+      - name: Install dependencies
+        run: yarn install
+
       - name: Run the script
         run: node ./scripts/removeOldFolders.js --n-days ${{ github.event.inputs.n_days }} --folder-name ${{ github.event.inputs.folder_name }}
 
