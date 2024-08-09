@@ -4,7 +4,7 @@ on:
   
 jobs:
 
-  setup-and-run-tests:
+  run-tests:
     # setup and run the tests in parallel machines, with each machine uploading its own results to artifacts
     # artifacts are shared among jobs and machines
     timeout-minutes: 15
@@ -39,10 +39,10 @@ jobs:
         retention-days: 14
 
 
-  merge-reports-and-upload:
+  merge-reports-and-upload-reports:
     # Merge reports after playwright tests, even if some shards have failed
     if: always()
-    needs: [setup-and-run-tests]
+    needs: [run-tests]
     runs-on: ubuntu-latest
 
     outputs:
