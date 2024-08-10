@@ -32,7 +32,7 @@ jobs:
           retention-days: 30
       
       - name: Deploy report to gh-pages
-        uses: ./.github\actions\deploy-report-to-gh-pages
+        uses: ./.github/actions/deploy-report-to-gh-pages
         with:
           directory-to-deploy: playwright-report
       
