@@ -34,5 +34,7 @@ jobs:
       - name: Deploy report to gh-pages
         uses: ./.github/actions/deploy-report-to-gh-pages
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           directory-to-deploy: playwright-report
+
       

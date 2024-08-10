@@ -2,6 +2,10 @@ name: Deploy report to gh-pages
 description: Deploy report to gh-pages branch
 
 inputs:
+  github_token:
+    description: 'GitHub token for authentication'
+    required: true
+
   directory-to-deploy:
     description: 'path to the directory to deploy'
     required: true
@@ -19,7 +23,7 @@ runs:
     - name: Deploy reports
       uses: peaceiris/actions-gh-pages@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ inputs.github_token }}
         publish_dir: ${{ inputs.directory-to-deploy }}"
         destination_dir: ${{ steps.timestampid.outputs.timestamp }}
 
