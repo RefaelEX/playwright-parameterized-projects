@@ -31,18 +31,8 @@ jobs:
           path: playwright-report/
           retention-days: 30
       
-      - name: Set a timestamp
-        id: timestampid
-        # this will store current time with UTC in outputs.timestamp (eg of value: 20231028_233147Z)
-        run: echo "timestamp=$(date --utc +%Y%m%d_%H%M%SZ)" >> "$GITHUB_OUTPUT" 
-      
-      - name: Deploy reports
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Deploy report to gh-pages
+        uses: ./.github\actions\deploy-report-to-gh-pages
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./playwright-report
-          destination_dir: ${{ steps.timestampid.outputs.timestamp }}
-
-      - name: Write URL in summary
-        run: echo "### Test results (link available after 20 secs) - https://${{ github.repository_owner }}.github.io/playwright-parameterized-projects/${{ steps.timestampid.outputs.timestamp }}/" >> $GITHUB_STEP_SUMMARY
+          directory-to-deploy: playwright-report
       

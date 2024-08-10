@@ -1,5 +1,4 @@
-import { defineConfig, PlaywrightTestConfig } from '@playwright/test';
-import { TestOptions } from './src/my-test';
+import { PlaywrightTestConfig } from '@playwright/test';
 
 /**
  * Read environment variables from file.
