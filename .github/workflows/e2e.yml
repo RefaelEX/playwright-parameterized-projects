@@ -47,6 +47,7 @@ jobs:
           destination-repository-name: 'reports-storage'
           target-directory: 'playwright-report_${{ github.run_id }}'
           user-email: ''
+          target-branch: 'master'
   
 
       
