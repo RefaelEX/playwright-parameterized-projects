@@ -37,4 +37,16 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           directory-to-deploy: playwright-report
 
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_REPORTS_DEPLOY_KEY }}
+        with:
+          source-directory: 'playwright-report'
+          destination-github-username: 'cpina'
+          destination-repository-name: 'reports-storage'
+          user-email: carles3@pina.cat
+          target-branch: main
+  
+
       
