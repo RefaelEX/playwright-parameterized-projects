@@ -49,5 +49,7 @@ jobs:
           user-email: ''
           target-branch: 'master'
   
+      - name: Write URL in summary
+        run: echo "### Test results https://refaelex.github.io/reports-storage/playwright-report_${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
 
       
