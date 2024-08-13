@@ -43,10 +43,10 @@ jobs:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_REPORTS_DEPLOY_KEY }}
         with:
           source-directory: 'playwright-report'
-          destination-github-username: 'cpina'
+          destination-github-username: 'RefaelEX'
           destination-repository-name: 'reports-storage'
-          user-email: carles3@pina.cat
-          target-branch: main
+          target-directory: 'playwright-report_${{ github.run_id }}'
+          user-email: ''
   
 
       
